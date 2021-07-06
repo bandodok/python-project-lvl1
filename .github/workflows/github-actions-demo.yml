@@ -4,4 +4,6 @@ jobs:
   check-bat-version:
   runs-on: ubuntu-latest
     steps:
-       - run: make lint
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: make lint
