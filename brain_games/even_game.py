@@ -1,18 +1,19 @@
 from random import randint
 
-import prompt
+from brain_games.main_game import game
 
 
 def brain_even():
+    task = 'Answer "yes" if the number is even, otherwise answer "no".'
     count = 0
+    questions = []
+    answers = []
     while count < 3:
-        print('Answer "yes" if the number is even, otherwise answer "no".')
-        num = randint(0, 100)
-        print('Question: {arg1}'.format(arg1=num))
-        ans = prompt.string('Your answer: ')
-        if ans == 'yes' and num % 2 == 0 or ans == 'no' and num % 2 != 0:
-            print('Correct!')
-            count += 1
+        questions.append(randint(1, 100))
+        count += 1
+    for index in range(0, 3):
+        if questions[index] % 2 == 0:
+            answers.append('yes')
         else:
-            return 'fail'
-    return 'win'
+            answers.append('no')
+    game(task, questions, answers)
