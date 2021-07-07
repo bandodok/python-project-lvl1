@@ -6,18 +6,18 @@ from brain_games.main_game import game
 def brain_calc():
     task = 'What is the result of the expression?'
     count = 0
-    que = []
-    ans = []
+    questions = []
+    answers = []
     while count < 3:
-        num1 = randint(0, 100)
-        num2 = randint(0, 100)
+        first_num = randint(0, 100)
+        second_num = randint(0, 100)
         sign = choice(('+', '-', '*'))
-        que.append('{ar1} {ar2} {ar3}'.format(ar1=num1, ar2=sign, ar3=num2))
+        questions.append('{arg1} {arg2} {arg3}'.format(arg1=first_num, arg2=sign, arg3=second_num))
         count += 1
         if sign == '+':
-            ans.append(str(num1 + num2))
+            answers.append(str(first_num + second_num))
         elif sign == '-':
-            ans.append(str(num1 - num2))
+            answers.append(str(first_num - second_num))
         elif sign == '*':
-            ans.append(str(num1 * num2))
-    game(task, que, ans)
+            answers.append(str(first_num * second_num))
+    game(task, questions, answers)
