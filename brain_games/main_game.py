@@ -2,7 +2,7 @@ import prompt
 from brain_games.brain_hello import welcome_user
 
 
-def game(task, question, corr_ans):
+def game(task, question, corr_ans, ex_ans=False):
     print('Welcome to the Brain Games!')
     name = welcome_user()
     print(task)
@@ -14,7 +14,7 @@ def game(task, question, corr_ans):
             print('Correct!')
             count += 1
         else:
-            if 'divisor' in task:
+            if ex_ans:
                 text1 = "'{ar1}' is wrong answer ;(. ".format(ar1=answer)
                 text2 = "Correct answer was '{a1}'.".format(a1=corr_ans[index])
                 print(text1 + text2)

@@ -29,4 +29,4 @@ def brain_gcd():
                 mod = maximum % minimum
             ans.append(str(minimum))
             count += 1
-    game(task, que, ans)
+    game(task, que, ans, True)
