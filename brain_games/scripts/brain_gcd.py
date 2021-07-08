@@ -1,4 +1,4 @@
-from brain_games.gcd_game import brain_gcd
+from brain_games.games.gcd_game import brain_gcd
 
 
 def main():
