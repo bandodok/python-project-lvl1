@@ -19,6 +19,9 @@ def brain_progression():
         index = randint(0, len(progression) - 1)
         ans.append(str(progression[index]))
         progression[index] = '..'
-        que.append(str(progression))
+        que_array = ''
+        for num in progression:
+            que_array += ' {ar}'.format(ar=str(num))
+        que.append(que_array)
         count += 1
     game(task, que, ans, exp_ans)
