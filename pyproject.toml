@@ -1,8 +1,15 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "brain games"
 authors = ["Dmitrij Svetov <bandodok@gmail.com>"]
+repository = 'https://github.com/bandodok/python-project-lvl1'
+classifiers = [
+        'Development Status :: 2 - Pre-Alpha',
+		'Environment :: Plugins',
+		'Intended Audience :: Education',
+        'Programming Language :: Python :: 3.9',
+    ]
 packages = [
 	{ include = "brain_games" },
 ]
