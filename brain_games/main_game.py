@@ -6,18 +6,16 @@ def game(task, question, corr_ans, ex_ans=False):
     print('Welcome to the Brain Games!')
     name = welcome_user()
     print(task)
-    count = 0
-    for index in range(0, 3):
-        print('Question: {arg1}'.format(arg1=question[index]))
+    for i, q in enumerate(question):
+        print(f'Question: {q}')
         answer = prompt.string('Your answer: ')
-        if answer == corr_ans[index]:
+        if answer == corr_ans[i]:
             print('Correct!')
-            count += 1
-        else:
-            if ex_ans:
-                text1 = "'{ar1}' is wrong answer ;(. ".format(ar1=answer)
-                text2 = "Correct answer was '{a1}'.".format(a1=corr_ans[index])
-                print(text1 + text2)
-            print("Let's try again, {arg1}!".format(arg1=name))
-            return
-    print('Congratulations, {arg1}!'.format(arg1=name))
+            continue
+        if ex_ans:
+            text1 = f"'{answer}' is wrong answer ;(. "
+            text2 = f"Correct answer was '{corr_ans[i]}'."
+            print(text1 + text2)
+        print(f"Let's try again, {name}!")
+        return
+    print(f'Congratulations, {name}!')
